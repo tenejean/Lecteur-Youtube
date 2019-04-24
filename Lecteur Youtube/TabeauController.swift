@@ -14,6 +14,8 @@ class TabeauController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var chansons = [Chanson]()
     
+    let identifiantCell = "ChansonCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -24,7 +26,17 @@ class TabeauController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return chansons.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let chanson = chansons[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifiantCell) as? ChansonCell {
+            cell.creerCell(chanson)
+            return cell
+        }
         return UITableViewCell()
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+         return 170
+
     }
     func ajouterChanson()  {
        chansons = [Chanson]()
@@ -36,7 +48,7 @@ class TabeauController: UIViewController, UITableViewDelegate, UITableViewDataSo
         chansons.append(basique)
         let ronde = Chanson(artiste: "Orelsan", titre: "La terre est ronde", code: "oGdhZyS2ozo")
         chansons.append(ronde)
-        let san = Chanson(artiste: "Orelsan", titre: "san", code: "PejyoeG_TmA")
+        let san = Chanson(artiste: "Orelsan", titre: "San", code: "PejyoeG_TmA")
         chansons.append(san)
         let seul = Chanson(artiste: "Orelsan", titre: "Si seul", code: "cz-PLtXh7Lo")
         chansons.append(seul)

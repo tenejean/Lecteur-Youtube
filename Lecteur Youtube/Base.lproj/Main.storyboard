@@ -21,6 +21,43 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y2v-NK-VWq">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChansonCell" rowHeight="174" id="VLB-38-wWi" customClass="ChansonCell" customModule="Lecteur_Youtube" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="174"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VLB-38-wWi" id="LbT-3e-4NK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="173.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3mu-8A-kgS">
+                                                    <rect key="frame" x="23" y="12" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="UEy-0p-UfS"/>
+                                                        <constraint firstAttribute="width" constant="150" id="kkh-1f-6nR"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfa-YW-0ka">
+                                                    <rect key="frame" x="181" y="16" width="179" height="142"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nfa-YW-0ka" secondAttribute="bottom" constant="5" id="9OJ-WY-EZU"/>
+                                                <constraint firstItem="nfa-YW-0ka" firstAttribute="trailing" secondItem="LbT-3e-4NK" secondAttribute="trailingMargin" id="ENw-Kx-UR6"/>
+                                                <constraint firstItem="3mu-8A-kgS" firstAttribute="centerY" secondItem="LbT-3e-4NK" secondAttribute="centerY" id="FxQ-i9-Xan"/>
+                                                <constraint firstItem="nfa-YW-0ka" firstAttribute="top" secondItem="LbT-3e-4NK" secondAttribute="topMargin" constant="5" id="LSr-Nv-1TS"/>
+                                                <constraint firstItem="3mu-8A-kgS" firstAttribute="leading" secondItem="LbT-3e-4NK" secondAttribute="leadingMargin" constant="8" id="e0z-zt-myz"/>
+                                                <constraint firstItem="nfa-YW-0ka" firstAttribute="leading" secondItem="3mu-8A-kgS" secondAttribute="trailing" constant="8" id="qCu-K8-lvo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artisteEtTitreLabel" destination="nfa-YW-0ka" id="rt2-ya-8sc"/>
+                                            <outlet property="miniature" destination="3mu-8A-kgS" id="v1g-Vk-Ntw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,4 +97,7 @@
             <point key="canvasLocation" x="248" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="960" height="553"/>
+    </resources>
 </document>
